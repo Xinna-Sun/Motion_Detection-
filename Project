@@ -1,0 +1,21 @@
+#include <chrono>
+using namespace std;
+
+int pirPin = A0;                            //MOTION SENSOR INPUT PIN.
+int sensorValue = LOW;                      //DEFAULT SENSOR STATE.
+
+void setup() {                              //INITIAL SETTINGS/ASSIGNMETN.
+  
+  pinMode(pirPin, INPUT);                   //SET PIR AS INPUT.
+}
+void loop() {                               //COMMAND TO BE REPEATED.
+  sensorValue = digitalRead(pirPin);        //READ PIR INPUT PIN.
+  if
+     (sensorValue == HIGH && Time.hour() < 21 && Time.hour() > 9 && Time.weekday() > 1 && Time.weekday() < 7) {               //IF MOTION IS DETECTED.
+                      
+         
+        Particle.publish("Activity Status", "Motion Detected");                      
+  }
+  
+  delay(30000);
+}
